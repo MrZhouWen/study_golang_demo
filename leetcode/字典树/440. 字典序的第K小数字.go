@@ -12,7 +12,7 @@ func findKthNumber(n, k int) int {
 	k--
 	for k > 0 {
 		steps := getSteps(cur, n)
-		if steps < k+1 { //说明结果就在这课子树中
+		if steps < k+1 { //说明结果不在这课子树中
 			k -= steps
 			cur++
 		} else { //就在这个字典树里找

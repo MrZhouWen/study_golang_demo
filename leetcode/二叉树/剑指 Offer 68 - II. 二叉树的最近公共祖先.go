@@ -1,4 +1,4 @@
-package 树
+package 二叉树
 
 /**
 题目：
