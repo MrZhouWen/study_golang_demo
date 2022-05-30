@@ -15,6 +15,7 @@ func main() {
 	//收藏模块路由
 	favoriteGroup := router.Group("/api/")
 	favoriteGroup.GET("/list", favorite.GetList)
+	favoriteGroup.POST("/submit", favorite.PostSubmit)
 
-	router.Run(":9090")
+	router.Run(":9099")
 }
