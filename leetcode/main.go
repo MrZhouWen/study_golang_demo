@@ -1,21 +1,18 @@
 package main
 
-import (
-	"fmt"
-	"math"
-)
+import "fmt"
 
 func main() {
-	var nums1 = []int{1, 2, 3}
-	nums2 := nums1[:2]
-
-	fmt.Println(math.MaxInt8 >> 1)
-
-	nums2 = append(nums2, 30)
-	fmt.Printf("num1=%v, num2=%v", nums1, nums2)
-	fmt.Printf("cap of num1 = %d; cap of num2 = %d \n\r", cap(nums1), cap(nums2))
-
-	nums2 = append(nums2, 50)
-	fmt.Printf("num1=%v, num2=%v", nums1, nums2)
-	fmt.Printf("cap of num1 = %d; cap of num2 = %d \n\r", cap(nums1), cap(nums2))
+	defer func() {
+		fmt.Println("defer-0")
+	}()
+	defer func() {
+		err := recover()
+		fmt.Println(err)
+	}()
+	defer func() {
+		panic(2)
+	}()
+	panic(1)
+	fmt.Println("the end")
 }
